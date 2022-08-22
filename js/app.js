@@ -24,7 +24,7 @@ function addPlayer(element)
   if(playerCollection.length<5){
     const playerName = element.parentNode.children[0].innerText;
     playerCollection.push(playerName);
-   element.disable = true;
+   element.disabled = true;
    element.style.backgroundColor = 'rgb(115 115 115)';
    setPlayerName(playerCollection);
   }
