@@ -47,7 +47,7 @@
               <div class="card-body items-center text-center">
                 <h2 class="card-title text-white">Lionel Messi</h2>
                 <p class="text-xs text-neutral-400 "><span>36 Goals </span> . <span> 120 Assist</span></p>
-                <button class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white">Select</button>
+                <button onclick="addPlayer(this)" class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white slect-btn">Select</button>
               </div>
             </div> <!-- card 1 end -->
             <!-- card 2 start -->
@@ -58,7 +58,7 @@
               <div class="card-body items-center text-center">
                 <h2 class="card-title text-white">Neymar Jr</h2>
                 <p class="text-xs text-neutral-400 "><span>36 Goals </span> . <span> 120 Assist</span></p>
-                <button class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white">Select</button>
+                <button onclick="addPlayer(this)" class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white slect-btn">Select</button>
               </div>
             </div> <!-- card 2 end -->
             <!-- card 3 start -->
@@ -69,7 +69,7 @@
               <div class="card-body items-center text-center">
                 <h2 class="card-title text-white">Kylian Mbappe</h2>
                 <p class="text-xs text-neutral-400 "><span>36 Goals </span> . <span> 120 Assist</span></p>
-                <button class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white">Selected</button>
+                <button onclick="addPlayer(this)" class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white slect-btn">Select</button>
               </div>
             </div> <!-- card 3 end -->
             <!-- card 4 start -->
@@ -80,7 +80,7 @@
               <div class="card-body items-center text-center">
                 <h2 class="card-title text-white">Renato Sanches</h2>
                 <p class="text-xs text-neutral-400 "><span>36 Goals </span> . <span> 120 Assist</span></p>
-                <button class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white">Selected</button>
+                <button onclick="addPlayer(this)" class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white slect-btn">Select</button>
               </div>
             </div> <!-- card 4 end -->
             <!-- card 5 start -->
@@ -91,7 +91,7 @@
               <div class="card-body items-center text-center">
                 <h2 class="card-title text-white">Sergio Ramos</h2>
                 <p class="text-xs text-neutral-400 "><span>36 Goals </span> . <span> 120 Assist</span></p>
-                <button class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white">Selected</button>
+                <button onclick="addPlayer(this)" class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white slect-btn">Select</button>
               </div>
             </div> <!-- card 5 end -->
             <!-- card 6 start -->
@@ -102,7 +102,7 @@
               <div class="card-body items-center text-center">
                 <h2 class="card-title text-white">Mohamed Salah</h2>
                 <p class="text-xs text-neutral-400 "><span>36 Goals </span> . <span> 120 Assist</span></p>
-                <button class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white">Selected</button>
+                <button onclick="addPlayer(this)" class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white slect-btn">Select</button>
               </div>
             </div> <!-- card 6 end -->
             <!-- card 7 start -->
@@ -113,7 +113,7 @@
               <div class="card-body items-center text-center">
                 <h2 class="card-title text-white">Karim Benzema</h2>
                 <p class="text-xs text-neutral-400 "><span>36 Goals </span> . <span> 120 Assist</span></p>
-                <button class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white">Selected</button>
+                <button onclick="addPlayer(this)" class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white slect-btn">Select</button>
               </div>
             </div> <!-- card 7 end -->
             <!-- card 8 start -->
@@ -124,7 +124,7 @@
               <div class="card-body items-center text-center">
                 <h2 class="card-title text-white">Virgil van Dijk</h2>
                 <p class="text-xs text-neutral-400 "><span>36 Goals </span> . <span> 120 Assist</span></p>
-                <button class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white">Selected</button>
+                <button onclick="addPlayer(this)" class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white slect-btn">Select</button>
               </div>
             </div> <!-- card 8 end -->
             <!-- card 9 start -->
@@ -135,7 +135,7 @@
               <div class="card-body items-center text-center">
                 <h2 class="card-title text-white">Kevin de Bruyne </h2>
                 <p class="text-xs text-neutral-400 "><span>36 Goals </span> . <span> 120 Assist</span></p>
-                <button class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white">Selected</button>
+                <button onclick="addPlayer(this)" class="bg-sky-800 hover:bg-sky-900 px-14 py-1  text-white slect-btn">Select</button>
               </div>
             </div> <!-- card 9 end -->
 
@@ -146,8 +146,12 @@
         <div class="">
           <!--start side bar -->
 
-          <div class=" bg-slate-900 text-neutral-200 w-64 h-80 p-4">
-              <h3 class="text-2xl text-center py-4 ">Budget</h3>
+          <div class=" bg-slate-900 text-neutral-200 w-64 h-80 p-8">
+              <h3  class="text-2xl text-center mb-4">Selected-<span id="selected-player-name"> V</span>
+               </h3>
+               <div id="player-list">
+                
+              </div>
           </div>
 
           <div class="mt-8 bg-slate-900 text-neutral-200 w-64 h-96 p-4">
@@ -195,7 +199,7 @@
     </footer>
   </main>
 
-
+<script src="js/app.js"></script>
 </body>
 
 </html>
