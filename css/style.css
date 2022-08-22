@@ -7,3 +7,20 @@ body{
 .card{
     border-radius: 0;
 }
+
+strong{
+    position: relative;
+  }
+  strong::after{
+    content: '';
+    position: absolute;
+    bottom: -1.1rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 0.75rem;
+    z-index: 10;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 10px;
+  }
