@@ -37,9 +37,6 @@ strong{
     .header-part p{
         font-size: 12px;
     }
-    .header-part{
-        width: 100%;
-    }
   }
 
   @media only screen and (max-width: 992px) {

@@ -8,13 +8,17 @@ function setPlayerName(array)
    const playerList = document.getElementById('player-list');
    
    playerList.innerHTML = '';
+   let ulElement = document.createElement('ul');
    for(let i=0; i<arrayLength; i++)
    {
-    let creatName = document.createElement('ul');
-    creatName.innerHTML = `<li>${i+1}.  ${array[i]}</li>`
-    playerList.appendChild(creatName);
+    let liElement = document.createElement('li');
+    liElement.innerText = `${i+1}.  ${array[i]}`;
+    ulElement.appendChild(liElement);
    }
+   playerList.appendChild(ulElement);
 }
+
+
 function addPlayer(element)
 {
   if(playerCollection.length<5){
@@ -41,7 +45,7 @@ function setElementText(elementId, value)
   document.getElementById(elementId).innerText = value;
 }
 
-function addAmount(perPlayerAmount)
+function addPerPlayerAmount(perPlayerAmount)
 {
   const totalPlayervalue = perPlayerAmount * playerCollection.length;
   return totalPlayervalue;
@@ -56,29 +60,32 @@ document.getElementById('btn-calculate').addEventListener('click',function (){
    {
     alert('please enter Amount');
    }
+   if(playerCollection.length === 0)
+   {
+    alert('please add player');
+   }
    else{
     const totalPlayervalue = parseFloat(perPlayerAmount);
-    const totalPlayerAmount = addAmount(totalPlayervalue);
+    const totalPlayerAmount = addPerPlayerAmount(totalPlayervalue);
     setElementText('player_expenses', totalPlayerAmount);
    }
 })
 
 document.getElementById('btn-total').addEventListener('click', function(){
-  const perPlayerAmount = getInputFieldValue('perPlayer-field');
+  const PlayerTotalAmount = document.getElementById('player_expenses').innerText;
   const managerField = getInputFieldValue('manager-field');
   const coachFeild = getInputFieldValue('choch-field');
 
-  if(isNaN(managerField) || isNaN(coachFeild) || isNaN(perPlayerAmount)){
+  if(isNaN(managerField) || isNaN(coachFeild) || isNaN(PlayerTotalAmount)){
     alert('please provide number') ;
    }
-   else if(managerField === '' || perPlayerAmount === ''  || coachFeild === '' )
+   else if(managerField === '' || PlayerTotalAmount === ''  || coachFeild === '' )
    {
     alert('please enter Amount');
    }
    else{
-    const totalPlayervalue = parseFloat(perPlayerAmount);
-    const totalPlayerAmount = addAmount(totalPlayervalue);
-    const total = totalPlayerAmount + parseFloat(managerField) + parseFloat(coachFeild);
+    const totalPlayervalue = parseFloat(PlayerTotalAmount);
+    const total = totalPlayervalue + parseFloat(managerField) + parseFloat(coachFeild);
     setElementText('total_expenses', total);
    }
 })
