@@ -69,7 +69,7 @@ document.getElementById('btn-total').addEventListener('click', function(){
   const coachFeild = getInputFieldValue('choch-field');
 
   if(isNaN(managerField) || isNaN(coachFeild) || isNaN(perPlayerAmount)){
-    alert('please provide number')
+    alert('please provide number') ;
    }
    else if(managerField === '' || perPlayerAmount === ''  || coachFeild === '' )
    {

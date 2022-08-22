@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
 
 body{
     font-family: 'Poppins', sans-serif;
@@ -6,6 +8,9 @@ body{
 
 .card{
     border-radius: 0;
+}
+.header-part h1{
+    font-family: 'Berkshire Swash', cursive;
 }
 
 strong{
@@ -24,3 +29,30 @@ strong{
     background-size: cover;
     margin-bottom: 10px;
   }
+
+  @media only screen and (max-width: 556px) {
+    .header-part h1{
+        font-size: 20px;
+    }
+    .header-part p{
+        font-size: 12px;
+    }
+    .header-part{
+        width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    .banner-images,.football{
+        display: none;
+    }
+    .header-part{
+        width: 100%;
+    }
+    .banner{
+        background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../images/player.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+}
