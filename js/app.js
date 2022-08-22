@@ -41,6 +41,12 @@ function setElementText(elementId, value)
   document.getElementById(elementId).innerText = value;
 }
 
+function addAmount(perPlayerAmount)
+{
+  const totalPlayervalue = perPlayerAmount * playerCollection.length;
+  return totalPlayervalue;
+}
+
 document.getElementById('btn-calculate').addEventListener('click',function (){
     const perPlayerAmount = getInputFieldValue('perPlayer-field');
    if(isNaN(perPlayerAmount)){
@@ -51,7 +57,28 @@ document.getElementById('btn-calculate').addEventListener('click',function (){
     alert('please enter Amount');
    }
    else{
-    const totalPlayerAmount = parseFloat(perPlayerAmount)* playerCollection.length;
+    const totalPlayervalue = parseFloat(perPlayerAmount);
+    const totalPlayerAmount = addAmount(totalPlayervalue);
     setElementText('player_expenses', totalPlayerAmount);
+   }
+})
+
+document.getElementById('btn-total').addEventListener('click', function(){
+  const perPlayerAmount = getInputFieldValue('perPlayer-field');
+  const managerField = getInputFieldValue('manager-field');
+  const coachFeild = getInputFieldValue('choch-field');
+
+  if(isNaN(managerField) || isNaN(coachFeild) || isNaN(perPlayerAmount)){
+    alert('please provide number')
+   }
+   else if(managerField === '' || perPlayerAmount === ''  || coachFeild === '' )
+   {
+    alert('please enter Amount');
+   }
+   else{
+    const totalPlayervalue = parseFloat(perPlayerAmount);
+    const totalPlayerAmount = addAmount(totalPlayervalue);
+    const total = totalPlayerAmount + parseFloat(managerField) + parseFloat(coachFeild);
+    setElementText('total_expenses', total);
    }
 })
