@@ -64,6 +64,10 @@ document.getElementById('btn-calculate').addEventListener('click',function (){
    {
     alert('please add player');
    }
+   else if(perPlayerAmount<0)
+   {
+    alert('please enter positive number');
+   }
    else{
     const totalPlayervalue = parseFloat(perPlayerAmount);
     const totalPlayerAmount = addPerPlayerAmount(totalPlayervalue);
@@ -82,6 +86,10 @@ document.getElementById('btn-total').addEventListener('click', function(){
    else if(managerField === '' || PlayerTotalAmount === ''  || coachFeild === '' )
    {
     alert('please enter Amount');
+   }
+   else if(managerField<0 || coachFeild < 0)
+   {
+    alert('please enter positive number');
    }
    else{
     const totalPlayervalue = parseFloat(PlayerTotalAmount);
